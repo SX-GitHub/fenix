@@ -43,7 +43,7 @@ build_updater_deb() {
 				updater_deb_dependencies+="wiringpi, python3-wiringpi, kodi, kodi-bin, encoder-libs-aml"
 				;;
 		esac
-	elif [ "$LINUX" == "mainline" ] && [ "$DISTRIBUTION" == "Ubuntu" ]; then
+	elif [ "$LINUX" == "mainline" ] && { [ "$DISTRIBUTION" == "Ubuntu" ] || [ "$DISTRIBUTION" == "Debian" ]; }; then
 		case $KHADAS_BOARD in
 			VIM1)
 				updater_deb_dependencies+="linux-u-boot-vim1-mainline"
